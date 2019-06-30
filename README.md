@@ -1,4 +1,4 @@
-# express-datastore [![Build Status](https://travis-ci.org/david0673/express-datastore.svg?branch=master)](https://travis-ci.org/david0673/express-datastore)
+# express-datastore
 
 > Get db connection in request
 
