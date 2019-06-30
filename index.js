@@ -1,3 +1,5 @@
+'use strict';
+
 var Datastore = require("@google-cloud/datastore").Datastore;
 
 var datastore;
