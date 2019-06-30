@@ -1,4 +1,4 @@
-const { Datastore } = require("@google-cloud/datastore");
+var Datastore = require("@google-cloud/datastore").Datastore;
 
 let datastore;
 
@@ -9,7 +9,7 @@ module.exports = function(options) {
 
   if (!datastore) = new Datastore(options || {});
 
-  return (req, res, next) => {
+  return function(req, res, next) {
     req[property] = datastore;
     next();
   };
