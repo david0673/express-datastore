@@ -1,31 +1,16 @@
-'use strict';
+const { Datastore } = require("@google-cloud/datastore");
 
-var MongoClient = require('mongodb').MongoClient;
+let datastore;
 
-module.exports = function (uri, opts) {
-	if (typeof uri !== 'string') {
-		throw new TypeError('Expected uri to be a string');
-	}
+module.exports = function(options) {
+  options = options || {};
+  const property = options.property || "db";
+  delete options.property;
 
-	opts = opts || {};
-	var property = opts.property || 'db';
-	delete opts.property;
+  if (!datastore) = new Datastore(options || {});
 
-	var connection;
-
-	return function expressMongoDb(req, res, next) {
-		if (!connection) {
-			connection = MongoClient.connect(uri, opts);
-		}
-
-		connection
-			.then(function (db) {
-				req[property] = db;
-				next();
-			})
-			.catch(function (err) {
-				connection = undefined;
-				next(err);
-			});
-	};
+  return (req, res, next) => {
+    req[property] = datastore;
+    next();
+  };
 };
