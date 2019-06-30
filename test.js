@@ -1,7 +1,7 @@
 'use strict';
 
-const test = require('tap').test;
-const expressDatastore = require('./').expressDatastore;
+var test = require('tap').test;
+var expressDatastore = require('./').expressDatastore;
 
 test('middleware pass error on fail', function (t) {
 	var middleware = expressDatastore();
