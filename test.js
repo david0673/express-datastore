@@ -16,7 +16,7 @@ test('middleware pass error on fail', function (t) {
 	});
 });
 
-test('middleware stores connection to mongodb', function (t) {
+test('middleware stores connection to datastore', function (t) {
 	var middleware = expressDatastore();
 	var req = {};
 
