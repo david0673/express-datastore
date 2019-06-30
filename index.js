@@ -9,7 +9,7 @@ module.exports = function(options) {
   var property = options.property || "db";
   delete options.property;
 
-  if (!datastore) = new Datastore(options || {});
+  if (!datastore) datastore = new Datastore(options || {});
 
   return function(req, res, next) {
     req[property] = datastore;
