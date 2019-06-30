@@ -1,10 +1,10 @@
 var Datastore = require("@google-cloud/datastore").Datastore;
 
-let datastore;
+var datastore;
 
 module.exports = function(options) {
   options = options || {};
-  const property = options.property || "db";
+  var property = options.property || "db";
   delete options.property;
 
   if (!datastore) = new Datastore(options || {});
