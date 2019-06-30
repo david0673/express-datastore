@@ -1,7 +1,7 @@
 'use strict';
 
 var test = require('tap').test;
-var expressDatastore = require('./').expressDatastore;
+var expressDatastore = require('./');
 
 test('middleware pass error on fail', function (t) {
 	var middleware = expressDatastore();
