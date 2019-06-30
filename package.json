@@ -1,7 +1,7 @@
 {
   "name": "express-datastore",
   "version": "1.0.0",
-  "description": "Get db connection in request",
+  "description": "Get datastore connection in request",
   "license": "MIT",
   "repository": "david0673/express-datastore",
   "author": {
